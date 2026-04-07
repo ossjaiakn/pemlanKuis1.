@@ -11,7 +11,6 @@ public class KlinikSapi {
         String layanan;
         String kelas;
 
-        // ================= INPUT NAMA =================
         while (true) {
             nama = sc.nextLine();
             if (!nama.matches("[a-zA-Z]+")) {
@@ -21,7 +20,6 @@ public class KlinikSapi {
             }
         }
 
-        // ================= INPUT BERAT =================
         while (true) {
             try {
                 berat = Integer.parseInt(sc.nextLine());
@@ -35,7 +33,6 @@ public class KlinikSapi {
             }
         }
 
-        // ================= INPUT LAYANAN =================
         while (true) {
             layanan = sc.nextLine();
             if (layanan.equals("spa") || layanan.equals("potong_kuku") || layanan.equals("grooming")) {
@@ -45,7 +42,6 @@ public class KlinikSapi {
             }
         }
 
-        // ================= INPUT KELAS =================
         while (true) {
             kelas = sc.nextLine();
             if (kelas.equals("reguler") || kelas.equals("vip")) {
@@ -55,7 +51,6 @@ public class KlinikSapi {
             }
         }
 
-        // ================= HARGA LAYANAN =================
         int hargaPerKg = 0;
         switch (layanan) {
             case "spa": hargaPerKg = 8000; break;
@@ -63,7 +58,6 @@ public class KlinikSapi {
             case "grooming": hargaPerKg = 10000; break;
         }
 
-        // ================= PERHITUNGAN =================
         double biayaDasar = berat * hargaPerKg;
 
         double diskon = 0;
@@ -82,12 +76,10 @@ public class KlinikSapi {
 
         double total = subtotal + pajak;
 
-        // ================= GRATIS KHUSUS =================
         if (nama.equals("Moo") || nama.equals("Mooo") || nama.equals("Moooo")) {
             total = 0;
         }
 
-        // ================= OUTPUT NOTA =================
         System.out.println("============= NOTA KLINIK SAPI =============");
         System.out.println("Nama Sapi: " + nama);
         System.out.println("Berat: " + berat + " kg");
